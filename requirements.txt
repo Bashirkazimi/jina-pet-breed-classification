@@ -1,4 +1,6 @@
 jina
 streamlit
 pillow
+torch
+torchvision
 
