@@ -14,4 +14,4 @@ This is a pet breed classification front end using streamlit. The backend is bui
 
 ## Online version
 
-A demo of the app is deployed on streamlit cloud [https://share.streamlit.io/bashirkazimi/jina-pet-breed-classification/classify.py], give it a try :) 
+A demo of the app is deployed on streamlit cloud [here](https://share.streamlit.io/bashirkazimi/jina-pet-breed-classification/classify.py), give it a try :) 

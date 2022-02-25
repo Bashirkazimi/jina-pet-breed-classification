@@ -3,9 +3,6 @@ import helper
 from jina import Flow
 
 
-# Flow
-flow = Flow().add(uses='jinahub://PetBreedClassifier')
-
 # Layout
 st.set_page_config(page_title="Jina Pet Breed Classification")
 st.markdown(
@@ -38,6 +35,8 @@ if query:
         if not query:
             st.markdown("Please upload a pet image")
         else:
+            # Flow
+            flow = Flow().add(uses='jinahub://PetBreedClassifier')
             with flow:
                 flow.post(on='/index', inputs=doc, on_done=lambda resp: show_pet_and_breed(resp.docs[0].tags, image))
         
