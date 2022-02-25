@@ -39,13 +39,9 @@ def main():
             else:
                 # Flow
                 flow = Flow().add(uses='jinahub://PetBreedClassifier')
-                try:
-                    flow.start()
+                with flow:
                     flow.post(on='/index', inputs=doc, on_done=lambda resp: show_pet_and_breed(resp.docs[0].tags, image))
-                finally:
-                    flow.close()
-
-
+        
 if __name__ == '__main__':
     main()
 
