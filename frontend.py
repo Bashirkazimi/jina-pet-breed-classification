@@ -38,6 +38,6 @@ if query:
     # if clicked on 'classify' button
     if st.button(label="Classify"):
         # get tags (predicted breed and probability) for the given pet image
-        tags, image = helper.get_breed(query, protocol=config.PROTOCOL, port=config.PORT)
+        tags, image = helper.get_breed(query, host=config.HOST, protocol=config.PROTOCOL, port=config.PORT)
         # show the image and its predicted greed!
         show_pet_and_breed(tags, image)

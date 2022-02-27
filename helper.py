@@ -36,8 +36,8 @@ class UI:
 headers = {"Content-Type": "application/json"}
 
 
-def get_breed(query, protocol='http', port=12345):
-    client = Client(protocol=protocol, port=port, return_responses=True)
+def get_breed(query, host='0.0.0.0', protocol='grpc', port=12345):
+    client = Client(host=host, protocol=protocol, port=port, return_responses=True)
     image = Image.open(query)
     img_array = np.array(image, dtype=np.uint8)
     doc = Document(tensor=img_array)
