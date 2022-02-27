@@ -8,10 +8,7 @@ This is a pet breed classification front end using streamlit. The backend is bui
 2. Enter the directory
 3. Create and activate virtualenv/conda env
 4. `pip install -r requirements.txt`
-5. `streamlit run classify.py`
+5. `python backend.py`
+5. `streamlit run frontend.py`
 6. Open the URL in your browser
 
-
-## Online version
-
-A demo of the app is deployed on streamlit cloud [here](https://share.streamlit.io/bashirkazimi/jina-pet-breed-classification/classify.py), give it a try :) 
