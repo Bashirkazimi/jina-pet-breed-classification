@@ -1,4 +1,4 @@
-from jina import Flow, Document
+from jina import Flow, Document, Client 
 import numpy as np
 from PIL import Image
 
@@ -36,12 +36,14 @@ class UI:
 headers = {"Content-Type": "application/json"}
 
 
-def convert_file_to_document(query):
-    """
-    Reads an uploaded image and sets it up as Document object to be processed by Jina.
-    """
+def get_breed(query, protocol='http', port=12345):
+    client = Client(protocol=protocol, port=port, return_responses=True)
     image = Image.open(query)
     img_array = np.array(image, dtype=np.uint8)
     doc = Document(tensor=img_array)
-    return doc, image 
+    resp = client.post(on='/', inputs=doc)
+    return resp[0].docs[0].tags, image
+
+    
+
 
